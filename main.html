@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Linmao's Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Portfolio  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{{ url_for('static', filename='bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<link href="{{ url_for('static', filename='style.css') }}" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="{{ url_for('static', filename='move-top.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='easing.js') }}"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+</script>
+</head>
+<body>	
+	<!-- container -->
+		<!-- header -->
+		<div id="home" class="header">
+			<div class="container">
+				<!-- -->
+				<div class="nav-icon">
+					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
+				</div>
+				 <div class="box" id="box">
+					 <div class="box_content">        					                         
+						<div class="box_content_center">
+						 	<div class="form_content">
+								<div class="menu_box_list">
+									<ul>
+										<li><a class="scroll" href="#home">Home</a></li>
+										<li><a class="scroll" href="#about">About</a></li>
+										<li><a class="scroll" href="#services">Skill</a></li>
+										<li><a class="scroll" href="#blog">Project</a></li>
+										<li><a class="scroll" href="#contact">Contact</a></li>
+										<div class="clear"> </div>
+									</ul>
+								</div>
+								<a class="boxclose" id="boxclose"> <span> </span></a>
+							</div>                                  
+						</div> 	
+					</div> 
+				</div>    
+				<!-- script-for-box -->
+				 <script type="text/javascript">
+					var $ = jQuery.noConflict();
+						$(function() {
+							$('#activator').click(function(){
+								$('#box').animate({'top':'0px'},500);
+							});
+							$('#boxclose').click(function(){
+							$('#box').animate({'top':'-700px'},500);
+							});
+						});
+						$(document).ready(function(){
+						//Hide (Collapse) the toggle containers on load
+						$(".toggle_container").hide(); 
+						//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+						$(".trigger").click(function(){
+							$(this).toggleClass("active").next().slideToggle("slow");
+								return false; //Prevent the browser jump to the link anchor
+						});
+											
+					});
+				</script>
+				<!-- /script-for-box -->
+
+				<!-- banner-info -->
+				<div class="banner-info text-center">
+					<img src="{{ url_for('static', filename='pic.png') }}" class="img-responsive" alt=""/>
+					<h1>Linmao Cong</h1>
+					<p>Love to Code and Explore :)</p>
+					<ul>
+						<li><a href="#">Hire Me</a></li>
+						<li><a href="#">Follow Me</a></li>
+					</ul>
+				</div>
+				<!-- /banner-info -->
+			</div>
+		</div>
+		<!-- /header -->
+		
+
+		<!-- about -->
+		<div id="about" class="about">
+			<div class="container">
+				<!-- head-section -->
+				<div class="head-section text-center">
+					<h2>About Me</h2>
+					<span></span>
+				</div>
+				<!-- head-section -->
+				<!-- about-grids -->
+				<div class="about-grids">
+					<div class="col-md-6 about-left-grid">
+						<h3>Linmao Cong</h3>
+						<span>Full Stack Developer | Software Engineer</span>
+						<p>Summary about me</p>
+						<p>a line under summary</p>
+					</div>
+					<div class="col-md-6 about-right-grid">
+						<a class="popup-with-zoom-anim" href="#small-dialog"><img src="{{ url_for('static', filename='video.jpg') }}" title="name" /></a>
+					</div>
+				</div>
+				<!-- /about-grids -->
+			</div>
+		</div>
+		
+				<!--pop-up-box-->
+				<script type="text/javascript" src="{{ url_for('static', filename='modernizr.custom.min.js') }}"></script>    
+				<link href="{{ url_for('static', filename='popuo-box.css') }}" rel="stylesheet" type="text/css" media="all"/>
+				<script src="{{ url_for('static', filename='jquery.magnific-popup.js') }}" type="text/javascript"></script>
+				<div id="small-dialog" class="mfp-hide">
+					<iframe src="{{ url_for('contact') }}"> </iframe>
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>								  
+				<!--/pop-up-box-->
+		<!-- /about -->
+
+		<!-- services -->
+		<div id="services" class="services">
+			<!-- head-section -->
+				<div class="head-section service-head text-center">
+					<h2>My Skill</h2>
+					<span></span>
+				</div>
+				<!-- head-section -->
+				<!-- services-grids -->
+				<div class="service-grids text-center">
+					<div class="container">
+						<div class="col-md-4">
+							<div class="service-grid t-service-grid">
+								<span class="s-cion1"> </span>
+								<h3>Programming Language</h3>
+								<p>Python, HTML5, CSS3, JavaScript, C/C++, Java</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid t-service-grid">
+								<span class="s-cion2"> </span>
+								<h3>Database</h3>
+								<p>PostgreSQL, SQLite, MySQL, Google NDB</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid t-service-grid">
+								<span class="s-cion3"> </span>
+								<h3>Software/Tools</h3>
+								<p>OAuth 2.0, Linux, Git/GitHub, Matlab, SPSS, Photoshop, App Engine, Cloud Endpoints, Amazon EC2</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid">
+								<span class="s-cion4"> </span>
+								<h3>Language</h3>
+								<p>English, Chinese, Cantonese</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid">
+								<span class="s-cion5"> </span>
+								<h3>Frameworks/Libs</h3>
+								<p>jQuery, Flask, SQLAlchemy, Bootstrap, JSON, AJAX</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid">
+								<span class="s-cion6"> </span>
+								<h3>Other</h3>
+								<p>Signal and Image Processing, Digital Communications, FPGA, Embedded System</p>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<!-- services-grids -->
+		</div>
+		<!-- services -->
+		
+
+
+
+
+		<!-- blog -->
+		<div id="blog" class="blog">
+			<div class="container">
+				<!-- head-section -->
+				<div class="head-section text-center">
+					<h2>My Projects</h2>
+					<span> </span>
+				</div>
+				<!-- /head-section -->
+				<!-- blog-articals -->
+				<div class="blog-articals">
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='blog-post.jpg') }}" title="name" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="{{ url_for('index') }}">Datamining</a></h3>
+							<span><a href="#">13 comments</a></span>
+							<p>Datamining</p>
+							<a class="more-btn" href="{{ url_for('index') }}">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="#"><img src="{{ url_for('static', filename='blog-post1.jpg') }}" title="name" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="#">Project 2</a></h3>
+							<span><a href="#">13 comments</a></span>
+							<p>P 2</p>
+							<a class="more-btn" href="#">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="#"><img src="{{ url_for('static', filename='blog-post3.jpg') }}" title="name" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="#">Project 3</a></h3>
+							<span><a href="#">13 comments</a></span>
+							<p>Project 3</p>
+							<a class="more-btn" href="#">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="#"><img src="{{ url_for('static', filename='blog-post4.jpg') }}" title="name" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="#">Project 4</a></h3>
+							<span><a href="#">13 comments</a></span>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.dolor in hendrerit in vulputate velit.</p>
+							<a class="more-btn" href="#">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="#"><img src="{{ url_for('static', filename='blog-post5.jpg') }}" title="name" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="#">Project 5</a></h3>
+							<span><a href="#">13 comments</a></span>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+							<a class="more-btn" href="#">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="#"><img src="{{ url_for('static', filename='blog-post.jpg') }}" title="name" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="#">Project 6</a></h3>
+							<span><a href="#">13 comments</a></span>
+							<p>p6</p>
+							<a class="more-btn" href="#">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+				<!-- blog-articals -->
+				
+			</div>
+		</div>
+		<!-- /blog -->
+
+
+
+
+		<!-- projects -->
+		<div class="projects">
+			<div class="container">
+				<div class="project-grids">
+					<div class="cycle">
+						<span> </span>
+					</div>
+					<div class="project-grid total-project">
+						<p>My</p>
+						<p>Education</p>
+						<span> <img class="img-responsive" style="padding: 5px" src="{{ url_for('static', filename='South_China_University_of_Technology_logo.png') }}"></span>
+					</div>
+					<div class="project-grid clientsgrid">
+						<div>
+
+						</div>
+						<span> <img class="img-responsive" style="padding: 5px" src="{{ url_for('static', filename='ub_log.png') }}"></span>
+					</div>
+					<div class="project-grid people-grid">
+						<div>
+
+						</div>
+						<span> <img class="img-responsive" style="padding: 5px" src="{{ url_for('static', filename='photo.png') }}"></span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- projects -->
+		
+
+		<!-- catch-on -->
+		<div id="contact" class="catch-on text-center">
+			<p>Want To Discuss Any Creative Projct ? <a class="catch" href="contact.html">Contact Me</a></p>
+		</div>
+		<!-- /catch-on -->
+		
+
+
+		<!-- footer -->
+		<div class="container">
+		<div class="footer">
+				
+				
+				<div class="clearfix"> </div>
+			</div>
+			<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+									<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+		</div>
+		<!-- /footer -->
+	<!-- /container -->
+</body>
+</html>
+
