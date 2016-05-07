@@ -199,7 +199,6 @@ a.boxclose{
 .about-left-grid h3{
 	margin:0;
 	padding:0;
-	text-transform:uppercase;
 	font-weight:700;
 	color:#595959;
 	font-size:1.5em;
@@ -208,14 +207,14 @@ a.boxclose{
 	margin:0.5em 0;
 	padding:0;
 	display:block;
-	text-transform:uppercase;
+
 	font-weight:600;
 	color:#595959;
 	font-size:1em;
 }
 .about-left-grid p{
 	color:#7c7c7c;
-	text-transform:uppercase;
+
 	font-size:0.9em;
 	line-height:1.9em;
 	margin:0;
