@@ -19,8 +19,7 @@ import math
 from Queue import Queue
 from sklearn import preprocessing
 from sklearn import svm
-import numpy as np
-
+import numpy
 
 app = Flask(__name__)
 
@@ -72,13 +71,7 @@ def connect():
     DBSession = sessionmaker(bind=engine)
     session = DBSession()
     return session
-def connectdata():    
-    engine = create_engine('sqlite:////var/www/mywebsite/mywebsite/database/datamining.db')
-    Base.metadata.bind = engine
 
-    DBSession = sessionmaker(bind=engine)
-    session = DBSession()
-    return session
 @app.route('/eventSource/')
 def sse_source():
     return Response(
@@ -87,7 +80,10 @@ def sse_source():
 
 @app.route("/project1")
 def index():
-    return render_template("index.html")
+    if 'username' not in login_session:
+        return redirect('/login')    
+    else:
+        return render_template("index.html",username = login_session['username'])
 
 @app.route("/getData/")
 def getData():
@@ -126,10 +122,12 @@ def getData():
 
     #USE INFORMATION RECEIVED FROM CLIENT TO CONTROL 
     #HOW MANY RECORDS ARE CONSIDERED IN THE ANALYSIS
-    if heatmap == "true":
+    if heatmap == "true" :
         random.shuffle(records)
         records = records[:100]
-
+    if analysis == "true" :
+        random.shuffle(records)
+        records = records[:80]        
     numListings = len(records)
 
 
@@ -230,8 +228,8 @@ def getData():
             featureData.append([record.latitude, record.longitude])
             targetData.append(record.price)
 
-        X = np.asarray(featureData, dtype='float')
-        y = np.asarray(targetData, dtype='float')
+        X = numpy.asarray(featureData, dtype='float')
+        y = numpy.asarray(targetData, dtype='float')
 
         breakpoint = int(numListings * .7)
 
@@ -283,7 +281,7 @@ def getData():
                 lng = remap(i, 0, numW, lng1, lng2)
 
                 testData = [[lat, lng]]
-                X_test = np.asarray(testData, dtype='float')
+                X_test = numpy.asarray(testData, dtype='float')
                 X_test_scaled = scaler.transform(X_test)
                 grid[j][i] = model_best.predict(X_test_scaled)
         grid = normalizeArray(grid)
@@ -513,6 +511,7 @@ def getUserID(email):
         return user.id
     except:
         return None
+
 @app.route('/gdisconnect')
 def gdisconnect():
     # Only disconnect a connected user.
@@ -593,8 +592,14 @@ def admin():
         return render_template('admin.html')
 
 @app.route('/newpage/test')
-def index():
-    return render_template('main.html')
+def mainpage():
+    cl1 = 33
+    cl2 = 24
+    cl3 = 0
+    cl4 = 0
+    cl5 = 0
+    cl6 = 0
+    return render_template('main.html',clicktimes1=cl1,clicktimes2=cl2,clicktimes3=cl3,clicktimes4=cl4,clicktimes5=cl5,clicktimes6=cl6)
 
 @app.route('/catalog')
 def showCatalog():
